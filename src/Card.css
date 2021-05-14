@@ -1,13 +1,21 @@
 .Card {
   padding: 10px;
   margin: 15px;
-  background: #f9b798;
+  background: #f0dcc6;
   border-radius: 10px;
-  border: 3px rgb(124, 62, 29) solid;
+  border: 3px #46a5af solid;
 }
 
 .CardButton {
   background: rgb(57, 100, 165);
   box-shadow: none;
   color: white;
+}
+
+.CardList {
+  list-style-type: none;
+}
+
+.CharacterImage {
+  width: 100%;
 }
