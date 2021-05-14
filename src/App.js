@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Card from "./Card";
+import characters from "./data-character.json";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {characters.map((character) => {
+        const { name, status, species, gender, origin, location, image, id } =
+          character;
+        return (
+          <Card
+            key={id}
+            name={name}
+            status={status}
+            species={species}
+            gender={gender}
+            origin={origin.name}
+            location={location.name}
+            image={image}
+          />
+        );
+      })}
     </div>
   );
 }
-
-export default App;

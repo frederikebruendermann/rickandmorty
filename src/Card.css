@@ -1,0 +1,13 @@
+.Card {
+  padding: 10px;
+  margin: 15px;
+  background: #f9b798;
+  border-radius: 10px;
+  border: 3px rgb(124, 62, 29) solid;
+}
+
+.CardButton {
+  background: rgb(57, 100, 165);
+  box-shadow: none;
+  color: white;
+}
