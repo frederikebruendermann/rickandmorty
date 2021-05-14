@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 import Card from "./Card";
+import Navigation from "./Navigation";
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [episodes, setEpisodes] = useState([]);
 
   const url = "https://rickandmortyapi.com/api/character";
 
@@ -16,7 +19,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <header class="App-header">
+      <header className="App-header">
         <h1 data-header>Rick and Morty App</h1>
       </header>
 
@@ -36,6 +39,12 @@ export default function App() {
           />
         );
       })}
+
+      <section className="NavigationBox">
+        <Navigation>Characters</Navigation>
+        <Navigation>Locations</Navigation>
+        <Navigation>Episodes</Navigation>
+      </section>
     </div>
   );
 }
