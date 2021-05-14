@@ -1,3 +1,15 @@
-NavigationActive(
-    
-)
+.NavigationBox {
+  background: #02b1c8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: white;
+}
+
+.NavigationActive {
+  opacity: 0.3;
+}

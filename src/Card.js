@@ -11,6 +11,7 @@ export default function Card({
   image,
 }) {
   const isFemale = gender !== "Male" ? "♀" : "♂";
+  const isAlive = status !== "Dead" ? "Is still Alive!" : "Unfortunately dead.";
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ export default function Card({
       </button>
       {isActive && (
         <>
-          <p className="Species">{status}</p>
+          <p className="Species">{isAlive}</p>
           <img className="CharacterImage" src={image} alt="" />
           <ul className="CardList">
             <li className="CardListItem">Species: {species}</li>

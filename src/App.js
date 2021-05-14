@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 import Card from "./Card";
 import Navigation from "./Navigation";
+import logo from "../src/images/logo.png";
+import CardLocations from "./CardLocations";
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const [locations, setLocations] = useState([]);
-  const [episodes, setEpisodes] = useState([]);
 
   const url = "https://rickandmortyapi.com/api/character";
 
@@ -17,10 +18,19 @@ export default function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  const urlLocations = "https://rickandmortyapi.com/api/location";
+
+  React.useEffect(() => {
+    fetch(urlLocations)
+      .then((res) => res.json())
+      .then((res) => setLocations(res.results))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1 data-header>Rick and Morty App</h1>
+        <img className="HeaderImg" src={logo} alt=""></img>
       </header>
 
       {characters.map((character) => {
@@ -36,6 +46,18 @@ export default function App() {
             origin={origin.name}
             location={location.name}
             image={image}
+          />
+        );
+      })}
+
+      {locations.map((location) => {
+        const { id, name, type, dimension } = location;
+        return (
+          <CardLocations
+            key={id}
+            name={name}
+            type={type}
+            dimension={dimension}
           />
         );
       })}

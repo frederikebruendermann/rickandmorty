@@ -3,13 +3,12 @@
   margin: 15px;
   background: #f0dcc6;
   border-radius: 10px;
-  border: 3px #46a5af solid;
+  border: 3px #02b1c8 solid;
 }
 
 .CardButton {
-  background: rgb(57, 100, 165);
   box-shadow: none;
-  color: white;
+  color: black;
 }
 
 .CardList {
