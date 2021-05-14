@@ -10,17 +10,23 @@ export default function Card({
   location,
   image,
 }) {
+  const isFemale = gender !== "Male" ? "♀️" : "♂️";
+
   return (
     <section className="Card">
-      <h2>{name}</h2>
+      <h2>
+        {name}
+        {isFemale}
+      </h2>
       <p className="Species">{status}</p>
       <img src={image} alt="" />
       <ul>
         <>
-          <li>{species}</li>
-          <li>{gender}</li>
-          <li>{origin}</li>
-          <li>{location}</li>
+          <li>
+            Species: {species} {isFemale}
+          </li>
+          <li>Origin: {origin}</li>
+          <li>📍 {location}</li>
         </>
       </ul>
     </section>

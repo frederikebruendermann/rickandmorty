@@ -16,6 +16,10 @@ export default function App() {
 
   return (
     <div className="App">
+      <header class="App-header">
+        <h1 data-header>Rick and Morty App</h1>
+      </header>
+
       {characters.map((character) => {
         const { name, status, species, gender, origin, location, image, id } =
           character;
