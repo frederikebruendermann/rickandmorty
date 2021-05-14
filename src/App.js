@@ -1,8 +1,19 @@
+import React, { useState } from "react";
 import "./App.css";
 import Card from "./Card";
-import characters from "./data-character.json";
 
 export default function App() {
+  const [characters, setCharacters] = useState([]);
+
+  const url = "https://rickandmortyapi.com/api/character";
+
+  React.useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => setCharacters(res.results))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="App">
       {characters.map((character) => {
