@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import "./Navigation.css";
-import Button from "./Button";
+import React, { useState } from 'react'
+import './Navigation.css'
+import Button from './Button'
 
-export default function Navigation() {
-  const [isActive, setIsActive] = useState({
-    characters: true,
-    locations: false,
-  });
-
+export default function Navigation({ isActive, handleClick }) {
   return (
     <nav className="Navigation">
       <Button isActive={isActive.characters} handleClick={handleClick}>
@@ -17,12 +12,5 @@ export default function Navigation() {
         locations
       </Button>
     </nav>
-  );
-
-  function handleClick(event) {
-    const value = event.target.name.toLowerCase();
-    const obj = { characters: false, locations: false };
-    obj[value] = true;
-    setIsActive(obj);
-  }
+  )
 }

@@ -1,5 +1,5 @@
-import "./CardLocation.css";
-import React from "react";
+import './CardLocation.css'
+import React from 'react'
 
 export default function CardLocations({ name, type, dimension, residents }) {
   return (
@@ -11,5 +11,5 @@ export default function CardLocations({ name, type, dimension, residents }) {
         <li className="CardListItemLocations">Residents: {residents}</li>
       </ul>
     </section>
-  );
+  )
 }
