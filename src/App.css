@@ -6,12 +6,14 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   color: #46a5af;
   margin-top: 20px;
 }
 
-HeaderImg {
+.HeaderImg {
   height: auto;
   width: 250px;
+  display: flex;
 }
