@@ -45,12 +45,12 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="CharacterCards">
-        <header className="AppHeader">
-          <img className="HeaderImg" src={logo} alt=""></img>
-          <h1>- Overview -</h1>
-        </header>
+      <header className="AppHeader">
+        <img className="HeaderImg" src={logo} alt=""></img>
+        {/* <h1></h1> */}
+      </header>
 
+      <div className="CharacterCards">
         {isActive.characters &&
           characters.map(character => <Card props={character} />)}
       </div>
