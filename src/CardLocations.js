@@ -6,8 +6,8 @@ export default function CardLocations({ name, type, dimension, residents }) {
     <section className="CardLocations">
       <h2>{name}</h2>
       <ul className="CardListLocations">
-        <li className="CardListItemLocations">type: {type}</li>
-        <li className="CardListItemLocations">dimension: {dimension}</li>
+        <li className="CardListItemLocations">Type: {type}</li>
+        <li className="CardListItemLocations">Dimension: {dimension}</li>
         <li className="CardListItemLocations">Residents: {residents}</li>
       </ul>
     </section>

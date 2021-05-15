@@ -4,11 +4,13 @@ import Card from './Card'
 import Navigation from './Navigation.js'
 import logo from '../src/images/logo.png'
 import CardLocations from './CardLocations'
+import CardEpisodes from './CardEpisodes'
 
 export default function App() {
   const [isActive, setIsActive] = useState({
     characters: true,
     locations: false,
+    episodes: false,
   })
 
   const url = 'https://rickandmortyapi.com/api/character'
@@ -28,6 +30,16 @@ export default function App() {
     fetch(urlLocations)
       .then(res => res.json())
       .then(res => setLocations(res.results))
+      .catch(error => console.error(error))
+  }, [])
+
+  const urlEpisodes = 'https://rickandmortyapi.com/api/episode'
+  const [episodes, setEpisodes] = useState([])
+
+  React.useEffect(() => {
+    fetch(urlEpisodes)
+      .then(res => res.json())
+      .then(res => setEpisodes(res.results))
       .catch(error => console.error(error))
   }, [])
 
@@ -58,6 +70,11 @@ export default function App() {
           })}
       </div>
 
+      <div className="EpisodeCards">
+        {isActive.episodes &&
+          episodes.map(episode => <CardEpisodes props={episode} />)}
+      </div>
+
       <section className="NavigationBar">
         <Navigation isActive={isActive} handleClick={handleClick} />
       </section>
@@ -66,7 +83,7 @@ export default function App() {
 
   function handleClick(event) {
     const value = event.target.name.toLowerCase()
-    const obj = { characters: false, locations: false }
+    const obj = { characters: false, locations: false, episodes: false }
     obj[value] = true
     setIsActive(obj)
   }
