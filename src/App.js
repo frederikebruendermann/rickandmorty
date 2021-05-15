@@ -48,7 +48,7 @@ export default function App() {
       <div className="CharacterCards">
         <header className="AppHeader">
           <img className="HeaderImg" src={logo} alt=""></img>
-          <h1>- Characters - </h1>
+          <h1>- Overview -</h1>
         </header>
 
         {isActive.characters &&
@@ -57,17 +57,7 @@ export default function App() {
 
       <div className="LocationCards">
         {isActive.locations &&
-          locations.map(location => {
-            const { id, name, type, dimension } = location
-            return (
-              <CardLocations
-                key={id}
-                name={name}
-                type={type}
-                dimension={dimension}
-              />
-            )
-          })}
+          locations.map(location => <CardLocations props={location} />)}
       </div>
 
       <div className="EpisodeCards">
