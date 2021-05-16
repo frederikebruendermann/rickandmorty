@@ -17,3 +17,22 @@
   width: 250px;
   display: flex;
 }
+
+div.Pagination {
+  background-color: #46a5af;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+button {
+  color: white;
+  background: #46a5af;
+  box-shadow: none;
+  border-color: white;
+  display: inline-block;
+  border: thin;
+  margin: 10px 20px;
+  padding: 5px 5px;
+  font-size: 16px;
+}

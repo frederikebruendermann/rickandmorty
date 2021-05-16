@@ -4,11 +4,18 @@
   background: #f0dcc6;
   border-radius: 10px;
   border: 3px #02b1c8 solid;
+  width: 345px;
+  height: auto;
+  display: grid;
+  justify-items: center;
+  position: relative;
 }
 
 .CardButton {
-  box-shadow: none;
   color: black;
+  border-radius: 10px;
+  border: 1px black solid;
+  background-color: #f0dcc6;
 }
 
 .CardList {
@@ -16,5 +23,5 @@
 }
 
 .CharacterImage {
-  width: 100%;
+  width: 80%;
 }

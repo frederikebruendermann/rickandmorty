@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 export default function Card({ props }) {
   const { name, status, species, gender, origin, location, image, id } = props
   const isFemale = gender !== 'Male' ? '♀' : '♂'
-  const isAlive = status !== 'Dead' ? 'Is still Alive!' : 'Unfortunately dead.'
+  const isAlive =
+    status !== 'Dead' ? 'Is still Alive!' : '† Unfortunately dead.'
   const [isActive, setIsActive] = useState(false)
 
   return (
@@ -12,6 +13,8 @@ export default function Card({ props }) {
       <h2>
         {name} {isFemale}
       </h2>
+      <img className="CharacterImage" src={image} alt="" />
+
       <button className="CardButton" onClick={() => setIsActive(!isActive)}>
         Details
       </button>
@@ -19,7 +22,6 @@ export default function Card({ props }) {
       {isActive && (
         <>
           <p className="Species">{isAlive}</p>
-          <img className="CharacterImage" src={image} alt="" />
           <ul className="CardList">
             <li className="CardListItem">Species: {species}</li>
             <li className="CardListItem">Origin: {origin.name}</li>
