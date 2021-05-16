@@ -66,7 +66,7 @@ export default function App() {
       .then(res => res.json())
       .then(res => setEpisodes(res.results))
       .catch(error => console.error(error))
-  }, [])
+  }, [setUrlEpisodes])
 
   // - LOOKING FOR A SOLUTION TO SHOW TITLES in H2 (Characters, Locations, Episodes) -
   // const setTitle =
