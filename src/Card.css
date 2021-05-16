@@ -25,3 +25,21 @@
 .CharacterImage {
   width: 80%;
 }
+
+.CardBookmark {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  border: 25px solid lightgrey;
+  border-bottom-color: transparent;
+  height: 10px;
+}
+
+.CardBookmark--selected {
+  border: 25px solid #da722d;
+  border-bottom-color: transparent;
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  height: 10px;
+}
