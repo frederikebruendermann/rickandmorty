@@ -14,6 +14,7 @@ export default function Card({ props }) {
         {name} {isFemale}
       </h2>
       <img className="CharacterImage" src={image} alt="" />
+      <div class="CardBookmark" aria-label="Add bookmark"></div>
 
       <button className="CardButton" onClick={() => setIsActive(!isActive)}>
         Details

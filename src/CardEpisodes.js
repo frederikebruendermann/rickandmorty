@@ -1,5 +1,6 @@
 import './CardEpisodes.css'
 import React from 'react'
+import './Card.css'
 
 export default function CardEpisodes({ props }) {
   const { id, name, air_date, episode } = props
@@ -12,6 +13,8 @@ export default function CardEpisodes({ props }) {
 
   return (
     <section key={id} className="CardEpisodes">
+      <div class="CardBookmark--selected" aria-label="Add bookmark"></div>
+
       <h2>{name}</h2>
       <ul>
         <li>Air Date: {newDate}</li>
